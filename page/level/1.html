@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL 1</title>
+    <!-- Sertakan pustaka jQuery -->
+    <script src="jquery-3.6.0.min.js"></script>
+    <!-- Sertakan pustaka SweetAlert2 -->
+    <script src="sweetalert2@11.js"></script>
+    <style>
+        /* Gaya untuk tata letak halaman */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-image: url('https://t3.ftcdn.net/jpg/03/23/88/08/360_F_323880864_TPsH5ropjEBo1ViILJmcFHJqsBzorxUB.jpg');
+            background-size: 100%, 100%;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        /* Gaya untuk kontainer */
+        .container {
+            width: 500px;
+            position: relative;
+            top: 10px;
+            gap: 20px;
+        }
+
+        /* Gaya untuk baris */
+        .row {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        /* Gaya untuk berbagai lebar elemen */
+        .w100 { width: 100px; }
+        .w130 { width: 130px; }
+        .w140 { width: 140px; }
+        .w150 { width: 150px; }
+        .w300 { width: 300px; }
+
+        /* Gaya untuk kolom */
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Gaya untuk input teks */
+        .tts {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 18px;
+            text-transform: uppercase;
+            clear: both;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.685);
+        }
+
+        /* Gaya untuk fokus pada input teks */
+        .tts:focus {
+            outline: none;
+        }
+
+        /* Gaya untuk posisi relatif */
+        .p-relative { position: relative; }
+        .top-10 { top: 10px; }
+
+        /* Gaya untuk blok */
+        .block_3 { position: relative; left: 55px; top: -93px; }
+        .block_4 { position: relative; left: 217px; top: -80px; }
+    </style>
+</head>
+
+<body>
+    <!-- Judul Level 1 -->
+    <h1>Level 1</h1>
+    <!-- Skor -->
+    <span id="sekor">Sekor 0</span>
+    <!-- Kontainer untuk input teks -->
+    <div class="container">
+        <!-- Baris pertama input teks -->
+        <div class="row w140">
+            <input type="text" name="tts" class="tts" id="tts_1" maxlength="1" value="A">
+            <input type="text" name="tts" class="tts" id="tts_2" maxlength="1">
+            <input type="text" name="tts" class="tts" id="tts_3" maxlength="1" value="A">
+            <input type="text" name="tts" class="tts" id="tts_4" maxlength="1" value="">
+        </div>
+        <br>
+        <!-- Kolom pertama input teks -->
+        <div class="column">
+            <input type="text" name="tts" class="tts" id="tts_5" maxlength="1">
+            <input type="text" name="tts" class="tts" id="tts_6" maxlength="1">
+            <input type="text" name="tts" class="tts" id="tts_7" maxlength="1" value="S">
+            <input type="text" name="tts" class="tts" id="tts_8" maxlength="1">
+        </div>
+        <!-- Baris kedua input teks -->
+        <div class="row block_3">
+            <input type="text" name="tts" class="tts" id="tts_9" maxlength="1">
+            <input type="text" name="tts" class="tts" id="tts_10" maxlength="1">
+            <input type="text" name="tts" class="tts" id="tts_11" maxlength="1" value="I">
+            <input type="text" name="tts" class="tts" id="tts_12" maxlength="1">
+            <input type="text" name="tts" class="tts" id="tts_13" maxlength="1">
+            <input type="text" name="tts" class="tts" id="tts_14" maxlength="1" value="L">
+            <input type="text" name="tts" class="tts" id="tts_15" maxlength="1" value="A">
+        </div>
+        <!-- Kolom kedua input teks -->
+        <div class="column block_4">
+            <input type="text" name="tts" class="tts" id="tts_16" maxlength="1">
+            <input type="text" name="tts" class="tts" id="tts_17" maxlength="1">
+            <input type="text" name="tts" class="tts" id="tts_18" maxlength="1" value="A">
+            <input type="text" name="tts" class="tts" id="tts_19" maxlength="1" value="H">
+        </div>
+    </div>
+    <!-- Sertakan skrip sound.js -->
+    <script src="../music/sound.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Memulai background sound
+            backsound2();
+            $(document).on("input", function () {
+                var sekor = 0;
+
+                // Ambil nilai dari setiap input teks dan ubah menjadi huruf besar
+                var tts1 = $('#tts_1').val().toUpperCase();
+                var tts2 = $('#tts_2').val().toUpperCase();
+                var tts3 = $('#tts_3').val().toUpperCase();
+                var tts4 = $('#tts_4').val().toUpperCase();
+                var tts5 = $('#tts_5').val().toUpperCase();
+                var tts6 = $('#tts_6').val().toUpperCase();
+                var tts7 = $('#tts_7').val().toUpperCase();
+                var tts8 = $('#tts_8').val().toUpperCase();
+                var tts9 = $('#tts_9').val().toUpperCase();
+                var tts10 = $('#tts_10').val().toUpperCase();
+                var tts11 = $('#tts_11').val().toUpperCase();
+                var tts12 = $('#tts_12').val().toUpperCase();
+                var tts13 = $('#tts_13').val().toUpperCase();
+                var tts14 = $('#tts_14').val().toUpperCase();
+                var tts15 = $('#tts_15').val().toUpperCase();
+                var tts16 = $('#tts_16').val().toUpperCase();
+                var tts17 = $('#tts_17').val().toUpperCase();
+                var tts18 = $('#tts_18').val().toUpperCase();
+                var tts19 = $('#tts_19').val().toUpperCase();
+
+                // Cek jawaban pertama
+                if (tts1 == "A" && tts2 == "Y" && tts3 == "A" && tts4 == "M") {
+                    $("#tts_1").css("background", "green");
+                    $("#tts_2").css("background", "green");
+                    $("#tts_3").css("background", "green");
+                    $("#tts_4").css("background", "green");
+                    sekor += 5;
+                } else {
+                    $("#tts_1").css("background", "");
+                    $("#tts_2").css("background", "");
+                    $("#tts_3").css("background", "");
+                    $("#tts_4").css("background", "");
+                }
+
+                // Cek jawaban kedua
+                if (tts1 == "A" && tts5 == "N" && tts6 == "G" && tts7 == "S" && tts8 == "A") {
+                    $("#tts_1").css("background", "green");
+                    $("#tts_5").css("background", "green");
+                    $("#tts_6").css("background", "green");
+                    $("#tts_7").css("background", "green");
+                    $("#tts_8").css("background", "green");
+                    sekor += 5;
+                }
+
+                // Cek jawaban ketiga
+                if (tts7 == "S" && tts9 == "E" && tts10 == "R" && tts11 == "I" && tts12 == "G" && tts13 == "A" && tts14 == "L" && tts15 == "A") {
+                    $("#tts_7").css("background", "green");
+                    $("#tts_9").css("background", "green");
+                    $("#tts_10").css("background", "green");
+                    $("#tts_11").css("background", "green");
+                    $("#tts_12").css("background", "green");
+                    $("#tts_13").css("background", "green");
+                    $("#tts_14").css("background", "green");
+                    $("#tts_15").css("background", "green");
+                    sekor += 5;
+                }
+
+                // Cek jawaban keempat
+                if (tts12 == "G" && tts16 == "A" && tts17 == "J" && tts18 == "A" && tts19 == "H") {
+                    $("#tts_12").css("background", "green");
+                    $("#tts_16").css("background", "green");
+                    $("#tts_17").css("background", "green");
+                    $("#tts_18").css("background", "green");
+                    $("#tts_19").css("background", "green");
+                    sekor += 5;
+                }
+
+                // Jika skor 20, tampilkan alert dan pindahkan ke level berikutnya
+                if (sekor == 20) {
+                    Swal.fire("Sekor kamu " + sekor);
+                    setTimeout(function(){
+                        window.location.href = "2.html";
+                    }, 3000);
+                }
+
+                // Tampilkan skor
+                $("#sekor").html("<span>Sekor " + sekor + "</span>");
+            });
+        });
+    </script>
+</body>
+
+</html>

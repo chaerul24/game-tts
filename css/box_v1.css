@@ -1,0 +1,66 @@
+* {
+    padding: 0px;
+    box-sizing: border-box;
+    margin: 0px;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://t3.ftcdn.net/jpg/03/23/88/08/360_F_323880864_TPsH5ropjEBo1ViILJmcFHJqsBzorxUB.jpg');
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+}
+
+.container-mobile {
+    position: relative;
+    top: 100px;
+    width: 350px;
+    min-height: 300px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.font {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.mtop-10 {
+    margin-top: 10px;
+}
+.text-center {
+    text-align: center;
+}
+.box_input_v1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.box_input_v1 label {
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-size: medium;
+}
+.box_input_v1 .input_v1 {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid grey;
+}
+.input_v1:focus {
+    outline: none;
+}
+.btn-black {
+    background-color: black;
+    font-family: "Jacquard 12", system-ui;
+    font-size: medium;
+    padding: 5px 10px;
+    color: white;
+    height: 40px;
+    border: none;
+}

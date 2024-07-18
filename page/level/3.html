@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL 3</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="sweetalert2@11.js"></script>
+    <script src="../music/sound.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-image: url('https://t3.ftcdn.net/jpg/03/23/88/08/360_F_323880864_TPsH5ropjEBo1ViILJmcFHJqsBzorxUB.jpg');
+            background-size: 100%, 100%;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        .container {
+            width: 500px;
+            position: relative;
+            top: 10px;
+            gap: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .w100 {
+            width: 100px;
+        }
+
+        .w130 {
+            width: 130px;
+        }
+
+        .w140 {
+            width: 140px;
+        }
+
+        .w150 {
+            width: 150px;
+        }
+
+        .w300 {
+            width: 300px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .tts {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 18px;
+            text-transform: uppercase;
+            clear: both;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.685);
+        }
+
+        .tts_none {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 18px;
+            text-transform: uppercase;
+            clear: both;
+            border: none;
+            background-color: transparent;
+        }
+
+        .tts:focus {
+            outline: none;
+        }
+
+        .p-relative {
+            position: relative;
+        }
+
+        .top-10 {
+            top: 10px;
+        }
+
+        .block_1 {
+            position: relative;
+            left: 108px;
+            top: 10px;
+        }
+
+        .block_2 {
+            position: relative;
+            left: 270px;
+            top: -240px;
+        }
+
+        .block_3 {
+            position: relative;
+            left: 325px;
+            top: -282px;
+        }
+
+        button.green {
+            background-color: green;
+            width: 100px;
+            border-radius: 10px;
+            padding: 10px;
+            border: none;
+            color: white;
+        }
+
+        button.red {
+            background-color: red;
+            width: 100px;
+            border-radius: 10px;
+            padding: 10px;
+            border: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Level 3</h1>
+    <span id="sekor">Skor 0</span>
+    <div class="container">
+        <div class="row w140">
+            <input type="text" name="tts" class="tts" id="tts_1" maxlength="1" value="K">
+            <input type="text" name="tts" class="tts" id="tts_2" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_3" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_4" maxlength="1" value="A">
+            <input type="text" name="tts" class="tts" id="tts_5" maxlength="1" value="">
+        </div>
+        <br>
+        <div class="row w140">
+            <input type="text" name="tts" class="tts" id="tts_6" maxlength="1" value="">
+        </div>
+        <br>
+        <div class="row w140">
+            <input type="text" name="tts" class="tts" id="tts_7" maxlength="1" value="D">
+            <input type="text" name="tts" class="tts" id="tts_8" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_9" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_10" maxlength="1" value="A">
+        </div>
+        <br>
+        <div class="row w140">
+            <input type="text" name="tts" class="tts" id="tts_11" maxlength="1" value="">
+        </div>
+        <br>
+
+    </div>
+    <script>
+        $(document).ready(function () {
+            
+            backsound2();
+            
+            $(document).on('input', function(){
+                function id(id){
+                    return $(id).val().toUpperCase();
+                }
+    
+                function bg(id, color){
+                    $(id).css("background", color);
+                }
+
+                var sekor = 0;
+                var jumlah = 0;
+                var tts1 = id("#tts_1");
+                var tts2 = id('#tts_2');
+                var tts3 = id('#tts_3');
+                var tts4 = id('#tts_4');
+                var tts5 = id('#tts_5');
+                var tts6 = id('#tts_6');
+                var tts7 = id('#tts_7');
+                var tts8 = id('#tts_8');
+                var tts9 = id('#tts_9');
+                var tts10 = id('#tts_10');
+                var tts11 = id('#tts_11');
+
+                if(tts1 == "K" && tts2 == "A" && tts3 == "T" && tts4 == "A" && tts5 == "K"){
+                    bg("#tts_1", "green");
+                    bg("#tts_2", "green");
+                    bg("#tts_3", "green");
+                    bg("#tts_4", "green");
+                    bg("#tts_5", "green");
+                    jumlah += 1;
+                    sekor += 5;
+                }
+
+                if(tts1 == "K" && tts6 == "U" && tts7 == "D" && tts11 == "A"){
+                    bg("#tts_1", "green");
+                    bg("#tts_6", "green");
+                    bg("#tts_7", "green");
+                    bg("#tts_11", "green");
+                    sekor += 5;
+                    jumlah += 1;
+                }
+                if(tts7 == "D" && tts8 == "A" && tts9 == "R" && tts10 == "A"){
+                    bg("#tts_7", "green");
+                    bg("#tts_8", "green");
+                    bg("#tts_9", "green");
+                    bg("#tts_10", "green");
+                    sekor += 5;
+                    jumlah += 1;
+                }
+
+                if (sekor == 15) {
+                    Swal.fire("Skor kamu "+sekor);
+                    setTimeout(function(){
+                        window.location.href = "4.html";
+                    }, 3000);
+                }
+                $("#sekor").html("<span>Skor " + sekor + "</span>");
+            });
+        });
+    </script>
+</body>
+
+</html>

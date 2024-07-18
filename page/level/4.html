@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL 4</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="sweetalert2@11.js"></script>
+    <script src="../music/sound.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-image: url('https://t3.ftcdn.net/jpg/03/23/88/08/360_F_323880864_TPsH5ropjEBo1ViILJmcFHJqsBzorxUB.jpg');
+            background-size: 100%, 100%;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        .container {
+            width: 500px;
+            position: relative;
+            top: 10px;
+            gap: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .w100 {
+            width: 100px;
+        }
+
+        .w130 {
+            width: 130px;
+        }
+
+        .w140 {
+            width: 140px;
+        }
+
+        .w150 {
+            width: 150px;
+        }
+
+        .w300 {
+            width: 300px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .tts {
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 18px;
+            text-transform: uppercase;
+            clear: both;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.685);
+        }
+        .tts_none {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 18px;
+            text-transform: uppercase;
+            clear: both;
+            border: none;
+            background-color: transparent;
+        }
+
+        .tts:focus {
+            outline: none;
+        }
+
+        .p-relative {
+            position: relative;
+        }
+
+        .top-10 {
+            top: 10px;
+        }
+
+        .block_1 {
+            position: relative;
+            left: 108px;
+            top: 10px;
+        }
+        .block_2 {
+            position: relative;
+            left: 270px;
+            top: -240px;
+        }
+        .block_3 {
+            position: relative;
+            left: 325px;
+            top: -282px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Level 4</h1>
+    <span id="sekor">Sekor 0</span>
+    <div class="container">
+        <div class="row">
+            <input type="text" name="tts" class="tts" id="tts_1" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_2" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_3" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_4" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_5" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_6" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_7" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_8" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_9" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_10" maxlength="1" value="">
+            
+        </div>
+        <br>
+        <div class="row">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_11" maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_12" maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+        </div>
+        <br>
+        <div class="row">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_13" maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_14" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_15" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_16" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_17" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_18" maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+        </div>
+        <br>
+        <div class="row">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_19" maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_20" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_21" maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+        </div>
+        <br>
+        <div class="row">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_22" maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_23" maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+        </div>
+        <br>
+        <div class="row">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_24" maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+            <input type="text" name="tts" class="tts_none" disabled maxlength="1" value="">
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            backsound2();
+            $(document).on("input", function () {
+                var sekor = 0;
+                var jumlah = 0;
+
+                function id(id){
+                    return $(id).val().toUpperCase();
+                }
+    
+                function bg(id, color){
+                    $(id).css("background", color);
+                }
+
+                var tts1 = id("#tts_1");
+                var tts2 = id("#tts_2");
+                var tts3 = id("#tts_3");
+                var tts4 = id("#tts_4");
+                var tts5 = id("#tts_5");
+                var tts6 = id("#tts_6");
+                var tts7 = id("#tts_7");
+                var tts8 = id("#tts_8");
+                var tts9 = id("#tts_9");
+                var tts10 = id("#tts_10");
+                var tts11 = id("#tts_11");
+                var tts12 = id("#tts_12");
+                var tts13 = id("#tts_13");
+                var tts14 = id("#tts_14");
+                var tts15 = id("#tts_15");
+                var tts16 = id("#tts_16");
+                var tts17 = id("#tts_17");
+                var tts18 = id("#tts_18");
+                var tts19 = id("#tts_19");
+                var tts20 = id("#tts_20");
+                var tts21 = id("#tts_21");
+                var tts22 = id("#tts_22");
+                var tts23 = id("#tts_23");
+                var tts24 = id("#tts_24");
+
+                if(tts1 == "L" && tts2 == "U" && tts3 == "M" && tts4 == "B" && tts5 == "A" && tts6 == "L" && tts7 == "U" && tts8 == "M" && tts9 == "B" && tts10 == "A"){
+                    bg("#tts_1", "green");
+                    bg("#tts_2", "green");
+                    bg("#tts_3", "green");
+                    bg("#tts_4", "green");
+                    bg("#tts_5", "green");
+                    bg("#tts_6", "green");
+                    bg("#tts_7", "green");
+                    bg("#tts_8", "green");
+                    bg("#tts_9", "green");
+                    bg("#tts_10", "green");
+                    sekor += 5;
+                }
+
+                if(tts2 == "U" && tts11 == "D" && tts13 == "A" && tts19 == "N" && tts22 == "G"){
+                    bg("#tts_2", "green");
+                    bg("#tts_13", "green");
+                    bg("#tts_19", "green");
+                    bg("#tts_22", "green");
+                    bg("#tts_11", "green");
+                    sekor += 5;
+                }
+
+                if(tts4 == "B" && tts12 == "A" && tts14 == "B" && tts20 == "I"){
+                    bg("#tts_4", "green");
+                    bg("#tts_12", "green");
+                    bg("#tts_14", "green");
+                    bg("#tts_20", "green");
+                    sekor += 5;
+                }
+
+                if(tts14 == "B" && tts15 == "U" && tts16 == "A" && tts17 == "Y" && tts18 == "A"){
+                    bg("#tts_14", "green");
+                    bg("#tts_15", "green");
+                    bg("#tts_16", "green");
+                    bg("#tts_17", "green");
+                    bg("#tts_18", "green");
+                    sekor += 5;
+                }
+
+                if(tts15 == "U" && tts21 =="N" && tts23 == "T" && tts24 == "A"){
+                    bg("#tts_15", "green");
+                    bg("#tts_21", "green");
+                    bg("#tts_23", "green");
+                    bg("#tts_24", "green");
+                    sekor += 5;
+                }
+
+                if (sekor == 25) {
+                    Swal.fire({
+                        title: "Wah Sekor yang sempurna",
+                        showClass: {
+                            popup: `
+                            animate__animated
+                            animate__fadeInUp
+                            animate__faster
+                          `
+                        },
+                        hideClass: {
+                            popup: `
+                            animate__animated
+                            animate__fadeOutDown
+                            animate__faster
+                          `
+                        }
+                    });
+                }
+                $("#sekor").html("<span>Sekor " + sekor + "</span>")
+            });
+        });
+    </script>
+</body>
+
+</html>

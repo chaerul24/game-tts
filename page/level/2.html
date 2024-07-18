@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL 2</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="../music/sound.js"></script>
+    <script src="sweetalert2@11.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-image: url('https://t3.ftcdn.net/jpg/03/23/88/08/360_F_323880864_TPsH5ropjEBo1ViILJmcFHJqsBzorxUB.jpg');
+            background-size: 100%, 100%;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        .container {
+            width: 500px;
+            position: relative;
+            top: 10px;
+            gap: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .w100 {
+            width: 100px;
+        }
+
+        .w130 {
+            width: 130px;
+        }
+
+        .w140 {
+            width: 140px;
+        }
+
+        .w150 {
+            width: 150px;
+        }
+
+        .w300 {
+            width: 300px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .tts {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 18px;
+            text-transform: uppercase;
+            clear: both;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.685);
+        }
+
+        .tts:focus {
+            outline: none;
+        }
+
+        .p-relative {
+            position: relative;
+        }
+
+        .top-10 {
+            top: 10px;
+        }
+
+        .block_1 {
+            position: relative;
+            left: 108px;
+            top: 10px;
+        }
+        .block_2 {
+            position: relative;
+            left: 270px;
+            top: -240px;
+        }
+        .block_3 {
+            position: relative;
+            left: 325px;
+            top: -282px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Level 2</h1>
+    <span id="sekor">Sekor 0</span>
+    <div class="container">
+        <div class="row w140">
+            <input type="text" name="tts" class="tts" id="tts_1" maxlength="1" value="A">
+            <input type="text" name="tts" class="tts" id="tts_2" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_3" maxlength="1" value="J">
+            <input type="text" name="tts" class="tts" id="tts_4" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_5" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_6" maxlength="1" value="">
+        </div>
+        <div class="column block_1">
+            <input type="text" name="tts" class="tts" id="tts_7" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_8" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_9" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_10" maxlength="1" value="P">
+            <input type="text" name="tts" class="tts" id="tts_11" maxlength="1" value="">
+        </div>
+        <div class="column block_2">
+            <input type="text" name="tts" class="tts" id="tts_12" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_13" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_14" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_15" maxlength="1" value="K">
+        </div>
+        <div class="row block_3">
+            <input type="text" name="tts" class="tts" id="tts_16" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_17" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_18" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_19" maxlength="1" value="">
+            <input type="text" name="tts" class="tts" id="tts_20" maxlength="1" value="C">
+            <input type="text" name="tts" class="tts" id="tts_21" maxlength="1" value="I">
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            backsound2();
+            $(document).on("input", function () {
+                var sekor = 0;
+
+                var tts1 = $('#tts_1').val().toUpperCase();
+                var tts2 = $('#tts_2').val().toUpperCase();
+                var tts3 = $('#tts_3').val().toUpperCase();
+                var tts4 = $('#tts_4').val().toUpperCase();
+                var tts5 = $('#tts_5').val().toUpperCase();
+                var tts6 = $('#tts_6').val().toUpperCase();
+                var tts7 = $('#tts_7').val().toUpperCase();
+                var tts8 = $('#tts_8').val().toUpperCase();
+                var tts9 = $('#tts_9').val().toUpperCase();
+                var tts10 = $('#tts_10').val().toUpperCase();
+                var tts11 = $('#tts_11').val().toUpperCase();
+                var tts12 = $('#tts_12').val().toUpperCase();
+                var tts13 = $('#tts_13').val().toUpperCase();
+                var tts14 = $('#tts_14').val().toUpperCase();
+                var tts15 = $('#tts_15').val().toUpperCase();
+                var tts16 = $('#tts_16').val().toUpperCase();
+                var tts17 = $('#tts_17').val().toUpperCase();
+                var tts18 = $('#tts_18').val().toUpperCase();
+                var tts19 = $('#tts_19').val().toUpperCase();
+                var tts20 = $('#tts_20').val().toUpperCase();
+                var tts21 = $('#tts_21').val().toUpperCase();
+
+                if(tts1 == "A" && tts2 == "N" && tts3 == "J" && tts4 == "I" && tts5 == "N" && tts6 == "G") {
+                    $("#tts_1").css("background", "green");
+                    $("#tts_2").css("background", "green");
+                    $("#tts_3").css("background", "green");
+                    $("#tts_4").css("background", "green");
+                    $("#tts_5").css("background", "green");
+                    $("#tts_6").css("background", "green");
+                    sekor += 5;
+                }
+
+                if(tts3 == "J" && tts7 == "E" && tts8 == "R" && tts9 == "A" && tts10 == "P" && tts11 == "A"){
+                    $("#tts_3").css("background", "green");
+                    $("#tts_7").css("background", "green");
+                    $("#tts_8").css("background", "green");
+                    $("#tts_9").css("background", "green");
+                    $("#tts_10").css("background", "green");
+                    $("#tts_11").css("background", "green");
+                    sekor += 5;
+                }
+
+                if(tts6 == "G" && tts12 == "A" && tts13 == "G" && tts14 == "A" && tts15 == "K"){
+                    $("#tts_6").css("background", "green");
+                    $("#tts_12").css("background", "green");
+                    $("#tts_13").css("background", "green");
+                    $("#tts_14").css("background", "green");
+                    $("#tts_15").css("background", "green");
+                    sekor += 5;
+                }
+
+                if(tts15 == "K" && tts16 == "E" && tts17 == "L" && tts18 == "I" && tts19 == "N" && tts20 == "C" && tts21 == "I"){
+                    $("#tts_15").css("background", "green");
+                    $("#tts_16").css("background", "green");
+                    $("#tts_17").css("background", "green");
+                    $("#tts_18").css("background", "green");
+                    $("#tts_19").css("background", "green");
+                    $("#tts_20").css("background", "green");
+                    $("#tts_21").css("background", "green");
+                    sekor += 5;
+                }
+
+                if (sekor == 20) {
+                    Swal.fire("Sekor kamu "+sekor);
+                    setTimeout(function(){
+                        window.location.href = "3.html";
+                    }, 3000);
+                }
+                $("#sekor").html("<span>Sekor " + sekor + "</span>");
+            });
+        });
+    </script>
+</body>
+
+</html>
